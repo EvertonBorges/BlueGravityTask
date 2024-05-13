@@ -5,9 +5,6 @@ using UnityEngine;
 public class BodyPartController : MonoBehaviour
 {
 
-    private static BodyPartController m_instance;
-    public static BodyPartController Instance => m_instance;
-
     private Action<BodyPartEnum, SO_BodyPart> m_changeBodyPartAction = (_, __) => { };
     public Action<BodyPartEnum, SO_BodyPart> ChangeBodyPart => m_changeBodyPartAction;
 
@@ -18,9 +15,6 @@ public class BodyPartController : MonoBehaviour
 
     void Awake()
     {
-        if (m_instance == null)
-            m_instance = this;
-
         foreach (var item in _bodyPart)
         {
             if (!m_bodyParts.ContainsKey(item.SoBodyPart.bodyPartEnum))
@@ -39,17 +33,37 @@ public class BodyPartController : MonoBehaviour
     {
         var bodyParts = m_bodyParts[bodyPartEnum];
 
-        if (soBodyPart == bodyParts[0].SoBodyPart)
+        if (soBodyPart == bodyParts[0].SoBodyPart && bodyParts[0].gameObject.activeSelf)
             return;
+
+        CheckHideAsset(bodyPartEnum, soBodyPart);
 
         foreach (var bodyPart in bodyParts)
             bodyPart.SetSOBodyPart(soBodyPart);
     }
 
+    private void CheckHideAsset(BodyPartEnum bodyPartEnum, SO_BodyPart soBodyPart)
+    {
+        if (soBodyPart.name.EndsWith("_00"))
+            return;
+
+        switch (bodyPartEnum)
+        {
+            case BodyPartEnum.HOOD:
+                m_bodyParts[BodyPartEnum.HOOD].ForEach(x => x.ShowAsset());
+                m_bodyParts[BodyPartEnum.HAIR].ForEach(x => x.HideAsset());
+                break;
+            case BodyPartEnum.HAIR:
+                m_bodyParts[BodyPartEnum.HAIR].ForEach(x => x.ShowAsset());
+                m_bodyParts[BodyPartEnum.HOOD].ForEach(x => x.HideAsset());
+                break;
+        }
+    }
+
     private void OnTestBodyParts()
     {
         foreach (var bodyPart in _bodyPartsTest)
-            BodyPartController.Instance.ChangeBodyPart.Invoke(bodyPart.bodyPartEnum, bodyPart);
+            ChangeBodyPart.Invoke(bodyPart.bodyPartEnum, bodyPart);
     }
 
     void OnEnable()

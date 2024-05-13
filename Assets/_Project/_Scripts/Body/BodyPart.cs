@@ -21,4 +21,14 @@ public class BodyPart : MonoBehaviour
         _soBodyPart = soBodyPart;
     }
 
+    public void ShowAsset()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void HideAsset()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

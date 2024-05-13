@@ -4,6 +4,7 @@ public enum BodyPartEnum
     HOOD = 1,
     TORSO = 2,
     PELVIS = 3,
+    HAIR = 4,
     BOOT = 10, BOOT_l = 11, BOOT_r = 12,
     ELBOW = 20, ELBOW_l = 21, ELBOW_r = 22,
     LEG = 30, LEG_l = 31, LEG_r = 32,

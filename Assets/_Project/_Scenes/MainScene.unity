@@ -616,6 +616,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f140fb55748b7854c95c5ad2320cb392, type: 2}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ceb2e67ac37c514b86db32c89b9d45d, type: 2}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: d56c6c9a9b412814f932c49f2ff79772, type: 2}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 58df6dba5e5026b45bd5c65f67a1ff76, type: 2}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17bcb64016f76f54eb79fedeec0fbb26, type: 2}
+    - target: {fileID: 1403290296729011939, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
+      propertyPath: _bodyPartsTest.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 17bcb64016f76f54eb79fedeec0fbb26, type: 2}
     - target: {fileID: 2865569314094219204, guid: 68b3df244ead0dd4a8349c2b293a81e0, type: 3}
       propertyPath: m_Name
       value: Shopkeeper
@@ -677,6 +705,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2689040261479381216, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737530912234497003, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3270677596580209826, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
