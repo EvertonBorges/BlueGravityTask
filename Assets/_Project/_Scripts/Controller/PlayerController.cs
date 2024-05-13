@@ -4,22 +4,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    [System.Serializable]
-    public class TestBodyPart
-    {
-        public BodyPartEnum bodyPartEnum;
-        public Sprite sprite;
-    }
-
     [SerializeField] private float _speed = 3f;
 
-    [SerializeField] private TestBodyPart[] _bodyPartsTest;
+    [SerializeField] private SO_BodyPart[] _bodyPartsTest;
 
     private bool m_interacting = false;
 
     private Vector3 m_move = default;
 
-    void Awake()
+    void Start()
     {
         OnTestBodyParts();
     }
@@ -40,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private void OnTestBodyParts()
     {
         foreach (var bodyPart in _bodyPartsTest)
-            BodyPartController.Instance.ChangeBodyPart.Invoke(bodyPart.bodyPartEnum, bodyPart.sprite);
+            BodyPartController.Instance.ChangeBodyPart.Invoke(bodyPart.bodyPartEnum, bodyPart);
     }
 
     private void OnMove(InputValue value)

@@ -4,9 +4,9 @@ public enum BodyPartEnum
     HOOD = 1,
     TORSO = 2,
     PELVIS = 3,
-    BOOT_l = 10, BOOT_r = 11,
-    ELBOW_l = 20, ELBOW_r = 21,
-    LEG_l = 30, LEG_r = 31,
-    SHOULDER_l = 40, SHOULDER_r = 41,
-    WRIST_l = 50, WRIST_r = 51
+    BOOT = 10, BOOT_l = 11, BOOT_r = 12,
+    ELBOW = 20, ELBOW_l = 21, ELBOW_r = 22,
+    LEG = 30, LEG_l = 31, LEG_r = 32,
+    SHOULDER = 40, SHOULDER_l = 41, SHOULDER_r = 42,
+    WRIST = 50, WRIST_l = 51, WRIST_r = 52
 }

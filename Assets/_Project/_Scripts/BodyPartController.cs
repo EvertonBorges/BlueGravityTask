@@ -8,12 +8,12 @@ public class BodyPartController : MonoBehaviour
     private static BodyPartController m_instance;
     public static BodyPartController Instance => m_instance;
 
-    private Action<BodyPartEnum, Sprite> m_changeBodyPartAction = (_, __) => { };
-    public Action<BodyPartEnum, Sprite> ChangeBodyPart => m_changeBodyPartAction;
+    private Action<BodyPartEnum, SO_BodyPart> m_changeBodyPartAction = (_, __) => { };
+    public Action<BodyPartEnum, SO_BodyPart> ChangeBodyPart => m_changeBodyPartAction;
 
     [SerializeField] private BodyPart[] _bodyPart;
 
-    private readonly Dictionary<BodyPartEnum, BodyPart> m_bodyParts = new();
+    private readonly Dictionary<BodyPartEnum, List<BodyPart>> m_bodyParts = new();
 
     void Awake()
     {
@@ -21,18 +21,23 @@ public class BodyPartController : MonoBehaviour
             m_instance = this;
 
         foreach (var item in _bodyPart)
-            m_bodyParts.Add(item.BodyPartEnum, item);
+        {
+            if (!m_bodyParts.ContainsKey(item.SoBodyPart.bodyPartEnum))
+                m_bodyParts.Add(item.SoBodyPart.bodyPartEnum, new() { item });
+            else
+                m_bodyParts[item.SoBodyPart.bodyPartEnum].Add(item);
+        }
     }
 
-    private void OnChangeBodyPart(BodyPartEnum bodyPartEnum, Sprite sprite)
+    private void OnChangeBodyPart(BodyPartEnum bodyPartEnum, SO_BodyPart soBodyPart)
     {
-        var bodyPart = m_bodyParts[bodyPartEnum];
-        var bodyPartSprite = bodyPart.Sprite;
+        var bodyParts = m_bodyParts[bodyPartEnum];
 
-        if (sprite == bodyPartSprite)
+        if (soBodyPart == bodyParts[0].SoBodyPart)
             return;
 
-        bodyPart.SetSprite(sprite);
+        foreach (var bodyPart in bodyParts)
+            bodyPart.SetSOBodyPart(soBodyPart);
     }
 
     void OnEnable()

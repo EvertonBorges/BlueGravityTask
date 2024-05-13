@@ -611,29 +611,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3270677596580209826, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5623926009217390401, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5857233576331990544, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
-      propertyPath: _bodyPartsTest.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5857233576331990544, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
-      propertyPath: _bodyPartsTest.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
-    - target: {fileID: 5857233576331990544, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
-      propertyPath: _bodyPartsTest.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
-    - target: {fileID: 5857233576331990544, guid: ec7433a11d5d5e847acd0b9ced8d0473, type: 3}
-      propertyPath: _bodyPartsTest.Array.data[1].bodyPartEnum
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
