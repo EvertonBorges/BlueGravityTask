@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6144935858441363667}
   - component: {fileID: 3669014454020835923}
+  - component: {fileID: 6931711701448404420}
   m_Layer: 0
   m_Name: Rogue_shoulder_l_01
   m_TagString: Untagged
@@ -150,6 +151,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6931711701448404420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180081110510100803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 40
+  _sprite: {fileID: 3669014454020835923}
 --- !u!1 &1783385310890736477
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3940942797517729069}
   - component: {fileID: 4625195334543029677}
+  - component: {fileID: 6698965202566857476}
   m_Layer: 0
   m_Name: Rogue_leg_l_01
   m_TagString: Untagged
@@ -234,6 +250,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6698965202566857476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783385310890736477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 30
+  _sprite: {fileID: 4625195334543029677}
 --- !u!1 &1866018328460246426
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343799848183704087}
   - component: {fileID: 4821968617223202370}
+  - component: {fileID: 9194738919383812753}
   m_Layer: 0
   m_Name: Rogue_wrist_l_01
   m_TagString: Untagged
@@ -318,6 +349,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9194738919383812753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866018328460246426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 50
+  _sprite: {fileID: 4821968617223202370}
 --- !u!1 &1880080160255174343
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5425203325886992376}
   - component: {fileID: 8134327603048893918}
+  - component: {fileID: 7909085112126326130}
   m_Layer: 0
   m_Name: Rogue_boot_l_01
   m_TagString: Untagged
@@ -402,6 +448,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7909085112126326130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880080160255174343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 10
+  _sprite: {fileID: 8134327603048893918}
 --- !u!1 &1914392911054888317
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188870007498490529}
   - component: {fileID: 8753991911445188388}
+  - component: {fileID: 6715370801843735019}
   m_Layer: 0
   m_Name: Rogue_leg_r_01
   m_TagString: Untagged
@@ -486,6 +547,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6715370801843735019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914392911054888317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 31
+  _sprite: {fileID: 8753991911445188388}
 --- !u!1 &2635724076949402623
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7581218590646071959}
   - component: {fileID: 750458860185544526}
+  - component: {fileID: 5056018793892022285}
   m_Layer: 0
   m_Name: Rogue_hood_01
   m_TagString: Untagged
@@ -602,6 +678,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5056018793892022285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689040261479381216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 1
+  _sprite: {fileID: 750458860185544526}
 --- !u!1 &3445821458435687291
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2525502242870666690}
   - component: {fileID: 7228134819178296147}
+  - component: {fileID: 3719162133639068078}
   m_Layer: 0
   m_Name: Rogue_pelvis_01
   m_TagString: Untagged
@@ -803,6 +894,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3719162133639068078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617220922932467438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 3
+  _sprite: {fileID: 7228134819178296147}
 --- !u!1 &3667767894846893223
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +1035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3542504405468785321}
   - component: {fileID: 8423135750739148462}
+  - component: {fileID: 5106711114750047237}
   m_Layer: 0
   m_Name: Rogue_elbow_l_01
   m_TagString: Untagged
@@ -1004,6 +1110,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5106711114750047237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3901149317486984167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 20
+  _sprite: {fileID: 7228134819178296147}
 --- !u!1 &4587413168053616250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7373876485104348280}
   - component: {fileID: 3532952460658512639}
+  - component: {fileID: 5464538963695068880}
   m_Layer: 0
   m_Name: Rogue_face_01
   m_TagString: Untagged
@@ -1088,6 +1209,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5464538963695068880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4587413168053616250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 0
+  _sprite: {fileID: 3532952460658512639}
 --- !u!1 &4641874511027044778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3671848215760182217}
   - component: {fileID: 6219314744307577517}
+  - component: {fileID: 1527172227671030157}
   m_Layer: 0
   m_Name: Rogue_boot_r_01
   m_TagString: Untagged
@@ -1240,6 +1376,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1527172227671030157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605948798535433702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 11
+  _sprite: {fileID: 6219314744307577517}
 --- !u!1 &5623926009217390401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3270677596580209826}
   - component: {fileID: 5857233576331990544}
+  - component: {fileID: 5946037305483160517}
   - component: {fileID: 2931094412721418133}
   - component: {fileID: 2315849066092178614}
   - component: {fileID: 2133018618209164133}
@@ -1289,6 +1440,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
+--- !u!114 &5946037305483160517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623926009217390401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3e93be4cf10b9429780b0dee99c8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart:
+  - {fileID: 5464538963695068880}
+  - {fileID: 5056018793892022285}
+  - {fileID: 9194738919383812753}
+  - {fileID: 5106711114750047237}
+  - {fileID: 6931711701448404420}
+  - {fileID: 2438894951375519019}
+  - {fileID: 2802072907895783779}
+  - {fileID: 5869145978462656587}
+  - {fileID: 7840156576929469693}
+  - {fileID: 7909085112126326130}
+  - {fileID: 6698965202566857476}
+  - {fileID: 1527172227671030157}
+  - {fileID: 6715370801843735019}
+  - {fileID: 3719162133639068078}
 --- !u!95 &2931094412721418133
 Animator:
   serializedVersion: 5
@@ -1395,6 +1573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 909460337122640057}
   - component: {fileID: 5432927184780616352}
+  - component: {fileID: 2438894951375519019}
   m_Layer: 0
   m_Name: Rogue_wrist_r_01
   m_TagString: Untagged
@@ -1469,6 +1648,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2438894951375519019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7498777632045528420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 51
+  _sprite: {fileID: 5432927184780616352}
 --- !u!1 &7604441644176023395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6677659448468225980}
   - component: {fileID: 4520293634174092699}
+  - component: {fileID: 7840156576929469693}
   m_Layer: 0
   m_Name: Rogue_torso_01
   m_TagString: Untagged
@@ -1620,6 +1814,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7840156576929469693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864943853298102697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 2
+  _sprite: {fileID: 4520293634174092699}
 --- !u!1 &8217608452666876434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7441726340623100749}
   - component: {fileID: 3609810485121325648}
+  - component: {fileID: 5869145978462656587}
   m_Layer: 0
   m_Name: Rogue_shoulder_r_01
   m_TagString: Untagged
@@ -1822,6 +2031,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5869145978462656587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273400935617673779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 41
+  _sprite: {fileID: 3609810485121325648}
 --- !u!1 &8307987098813773837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +2153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7949998161716476626}
   - component: {fileID: 5554112349402719557}
+  - component: {fileID: 2802072907895783779}
   m_Layer: 0
   m_Name: Rogue_elbow_r_01
   m_TagString: Untagged
@@ -2004,3 +2228,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2802072907895783779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000291356029079750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefc613e22b2024b891d7c82b71cbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bodyPart: 21
+  _sprite: {fileID: 5554112349402719557}
