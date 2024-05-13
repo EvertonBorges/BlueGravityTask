@@ -1032,7 +1032,8 @@ GameObject:
   - component: {fileID: 8417077927577897482}
   - component: {fileID: 5208004882827961644}
   - component: {fileID: 759941799819743179}
-  m_Layer: 0
+  - component: {fileID: 8763006229852008154}
+  m_Layer: 6
   m_Name: Shopkeeper
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1072,11 +1073,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 20bf2f18cab2ac3459f1122a196aba39, type: 2}
   - {fileID: 11400000, guid: cc7e56ebfd7fccf498f707978186280e, type: 2}
   - {fileID: 11400000, guid: 52594e40001f60642b9f44274ff8f52f, type: 2}
-  - {fileID: 11400000, guid: b12d29c6ee39d864a899b89fb364fd07, type: 2}
-  - {fileID: 11400000, guid: f7b3d92ebae5dcc40ae52f8a8138a75c, type: 2}
+  - {fileID: 11400000, guid: f140fb55748b7854c95c5ad2320cb392, type: 2}
   - {fileID: 11400000, guid: 4ceb2e67ac37c514b86db32c89b9d45d, type: 2}
   - {fileID: 11400000, guid: d56c6c9a9b412814f932c49f2ff79772, type: 2}
   - {fileID: 11400000, guid: 58df6dba5e5026b45bd5c65f67a1ff76, type: 2}
+  - {fileID: 11400000, guid: 17bcb64016f76f54eb79fedeec0fbb26, type: 2}
   _bodyPart:
   - {fileID: 4812792463585562932}
   - {fileID: 3669938960353487714}
@@ -1161,6 +1162,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.25, y: 4.25}
   m_Size: {x: 5, y: 8.5}
   m_Direction: 0
+--- !u!114 &8763006229852008154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2865569314094219204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70419aa35cd38b4e93383f2039bccb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3353282607076313008
 GameObject:
   m_ObjectHideFlags: 0
