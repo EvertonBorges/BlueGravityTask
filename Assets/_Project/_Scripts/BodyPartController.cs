@@ -11,6 +11,7 @@ public class BodyPartController : MonoBehaviour
     private Action<BodyPartEnum, SO_BodyPart> m_changeBodyPartAction = (_, __) => { };
     public Action<BodyPartEnum, SO_BodyPart> ChangeBodyPart => m_changeBodyPartAction;
 
+    [SerializeField] private SO_BodyPart[] _bodyPartsTest;
     [SerializeField] private BodyPart[] _bodyPart;
 
     private readonly Dictionary<BodyPartEnum, List<BodyPart>> m_bodyParts = new();
@@ -29,6 +30,11 @@ public class BodyPartController : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        OnTestBodyParts();
+    }
+
     private void OnChangeBodyPart(BodyPartEnum bodyPartEnum, SO_BodyPart soBodyPart)
     {
         var bodyParts = m_bodyParts[bodyPartEnum];
@@ -38,6 +44,12 @@ public class BodyPartController : MonoBehaviour
 
         foreach (var bodyPart in bodyParts)
             bodyPart.SetSOBodyPart(soBodyPart);
+    }
+
+    private void OnTestBodyParts()
+    {
+        foreach (var bodyPart in _bodyPartsTest)
+            BodyPartController.Instance.ChangeBodyPart.Invoke(bodyPart.bodyPartEnum, bodyPart);
     }
 
     void OnEnable()
