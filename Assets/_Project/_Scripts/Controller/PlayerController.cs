@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
+    [SerializeField] private PlayerAnimatorController _animator;
     [SerializeField] private float _speed = 3f;
 
     private bool m_interacting = false;
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         transform.position += _speed * Time.deltaTime * m_move;
+
+        _animator.SetSpeed(m_move.magnitude);
     }
 
     private void OnMove(InputValue value)
