@@ -26,13 +26,9 @@ public class Manager_Inventory : MonoBehaviour
     [SerializeField] private Slot_Inventory_Item _slotPrefab;
     [SerializeField] private GridLayoutGroup _gridLayoutGroup;
 
-    [SerializeField] private List<SO_BodyPart> _inventory;
-
     private ObjectPool<Slot_Inventory_Item> m_slots;
     private readonly List<Slot_Inventory_Item> m_usedSlots = new();
     private int m_currentSlotIndex = -1;
-
-    private readonly List<SO_BodyPart> m_startInventory = new();
 
     void Awake()
     {
@@ -55,28 +51,16 @@ public class Manager_Inventory : MonoBehaviour
         _ctnInventory.SetActive(false);
     }
 
-    private void Start()
-    {
-        StartInventory();
-    }
-
-    private void StartInventory()
-    {
-        var soBodyParts = PlayerController.Instance.BodyParts;
-
-        m_startInventory.Clear();
-        m_startInventory.AddRange(soBodyParts.ToList().FindAll(x => x.sprite != null || x.leftSprite != null).Distinct());
-
-        _inventory.AddRange(m_startInventory);
-        _inventory = _inventory.Distinct().ToList();
-    }
-
     private void ShowHideInventory()
     {
         m_show = !m_show;
 
         if (m_show)
+        {
+            m_currentSlotIndex = -1;
+
             Setup(true);
+        }
 
         _ctnInventory.SetActive(m_show);
     }
@@ -90,7 +74,7 @@ public class Manager_Inventory : MonoBehaviour
 
         var bodyParts = PlayerController.Instance.BodyParts;
 
-        foreach (var item in _inventory)
+        foreach (var item in System_Inventory.Inventory)
         {
             var slot = m_slots.Get();
             slot.Setup(item);

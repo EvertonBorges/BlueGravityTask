@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -35,6 +36,8 @@ public class PlayerController : MonoBehaviour
         m_startScale = transform.localScale;
 
         _canvasInteraction.gameObject.SetActive(false);
+
+        System_Inventory.StartInventory(BodyParts);
     }
 
     void Update()
