@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_BodyPart_Hood_00
   m_EditorClassIdentifier: 
   bodyPartEnum: 1
+  title: Hood 00
   sprite: {fileID: 0}
   leftSprite: {fileID: 0}
   rightSprite: {fileID: 0}

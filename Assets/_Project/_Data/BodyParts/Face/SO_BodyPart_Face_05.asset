@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_BodyPart_Face_05
   m_EditorClassIdentifier: 
   bodyPartEnum: 0
+  title: Face 05
   sprite: {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
   leftSprite: {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
   rightSprite: {fileID: 0}

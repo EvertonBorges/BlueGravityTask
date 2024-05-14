@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_BodyPart_Elbow_01
   m_EditorClassIdentifier: 
   bodyPartEnum: 20
+  title: Elbow 01
   sprite: {fileID: 0}
   leftSprite: {fileID: 21300000, guid: 48ecbe245379f214497aae538fe1d4f3, type: 3}
   rightSprite: {fileID: 21300000, guid: ece48dca5e286fd48b5dc0633b08b15d, type: 3}

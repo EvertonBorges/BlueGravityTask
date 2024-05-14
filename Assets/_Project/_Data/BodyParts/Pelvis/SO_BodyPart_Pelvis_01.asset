@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_BodyPart_Pelvis_01
   m_EditorClassIdentifier: 
   bodyPartEnum: 3
+  title: Pelvis 01
   sprite: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
   leftSprite: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
   rightSprite: {fileID: 0}

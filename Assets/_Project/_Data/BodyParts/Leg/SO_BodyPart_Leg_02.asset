@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SO_BodyPart_Leg_02
   m_EditorClassIdentifier: 
   bodyPartEnum: 30
+  title: Leg 02
   sprite: {fileID: 0}
   leftSprite: {fileID: 21300000, guid: 925993f8892fa474c904d0e9a8f67cee, type: 3}
   rightSprite: {fileID: 21300000, guid: 321cb2880c53eb743987a6a94741e4f0, type: 3}
