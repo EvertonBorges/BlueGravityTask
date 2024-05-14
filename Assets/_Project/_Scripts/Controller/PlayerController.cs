@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _interactableSizeMultiplier = 1.05f;
 
-    private bool m_interacting = false, m_facingLeft = false;
+    private bool m_facingLeft = false;
+    private bool m_interacting => Manager_Inventory.Show;
     private Vector3 m_startScale = default;
 
     private Vector3 m_move = default;
@@ -69,6 +70,11 @@ public class PlayerController : MonoBehaviour
             shopkeeper.Interact();
     }
 
+    private void Inventory()
+    {
+        Manager_Inventory.ShowHideInventoryAction();
+    }
+
     private void OnMove(InputValue value)
     {
         m_move = value.Get<Vector2>();
@@ -77,6 +83,11 @@ public class PlayerController : MonoBehaviour
     private void OnInteract(InputValue value)
     {
         Interact();
+    }
+
+    private void OnInventory(InputValue value)
+    {
+        Inventory();
     }
 
     private void CheckFaceSide(bool left)
