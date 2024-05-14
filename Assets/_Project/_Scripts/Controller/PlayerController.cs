@@ -1,39 +1,45 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
 
+    private static PlayerController m_instance;
+    public static PlayerController Instance => m_instance;
+
+    private static Action<BodyPartEnum, SO_BodyPart> m_onChangeBodyPartAction = (_, __) => { };
+    public static Action<BodyPartEnum, SO_BodyPart> OnChangeBodyPartAction => m_onChangeBodyPartAction;
+
     [SerializeField] private PlayerAnimatorController _animator;
     [SerializeField] private CapsuleCollider2D _collider;
     [SerializeField] private LayerMask _layerInteractable;
     [SerializeField] private Canvas _canvasInteraction;
     [SerializeField] private BodyPartController _bodyPartController;
+    public SO_BodyPart[] BodyParts => _bodyPartController.SoBodyParts;
 
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _interactableSizeMultiplier = 1.05f;
 
     private bool m_facingLeft = false;
-    private bool m_interacting => Manager_Inventory.Show;
+    private bool Interacting => Manager_Inventory.Show;
     private Vector3 m_startScale = default;
 
     private Vector3 m_move = default;
 
     void Awake()
     {
+        if (m_instance == null)
+            m_instance = this;
+
         m_startScale = transform.localScale;
 
         _canvasInteraction.gameObject.SetActive(false);
     }
 
-    void Start()
-    {
-        Manager_Inventory.StartInventoryAction(_bodyPartController.SoBodyParts);
-    }
-
     void Update()
     {
-        if (m_interacting)
+        if (Interacting)
             return;
 
         Move();
@@ -110,6 +116,21 @@ public class PlayerController : MonoBehaviour
         m_facingLeft = left;
         transform.localScale = scale;
         _canvasInteraction.transform.localScale = scale * 4f;
+    }
+
+    private void OnChangeBodyPart(BodyPartEnum bodyPartEnum, SO_BodyPart soBodyPart)
+    {
+        _bodyPartController.ChangeBodyPart(bodyPartEnum, soBodyPart);
+    }
+
+    void OnEnable()
+    {
+        m_onChangeBodyPartAction += OnChangeBodyPart;
+    }
+
+    void OnDisable()
+    {
+        m_onChangeBodyPartAction -= OnChangeBodyPart;
     }
 
 }

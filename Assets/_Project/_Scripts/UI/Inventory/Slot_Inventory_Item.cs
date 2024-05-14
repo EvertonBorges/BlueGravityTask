@@ -61,23 +61,10 @@ public class Slot_Inventory_Item : MonoBehaviour
         Manager_Inventory.SelectionAction(this);
     }
 
-    public void SetNavigation(Selectable selectOnUp = null, Selectable selectOnRight = null, Selectable selectOnDown = null, Selectable selectOnLeft = null)
-    {
-        var navigation = _button.navigation;
-
-        navigation.mode = Navigation.Mode.Explicit;
-
-        navigation.selectOnUp = selectOnUp;
-        navigation.selectOnRight = selectOnRight;
-        navigation.selectOnDown = selectOnDown;
-        navigation.selectOnLeft = selectOnLeft;
-
-        _button.navigation = navigation;
-    }
-
     private void BTN_Callback()
     {
-        Debug.Log($"Slot_Inventory_Item BTN_Callback: {m_soBodyPart.name}");
+        PlayerController.OnChangeBodyPartAction(m_soBodyPart.bodyPartEnum, m_soBodyPart);
+        Manager_Inventory.SetupAction();
     }
 
 }

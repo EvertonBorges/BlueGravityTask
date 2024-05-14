@@ -319,6 +319,7 @@ MonoBehaviour:
   _scroll: {fileID: 491161214}
   _slotParent: {fileID: 325960603}
   _slotPrefab: {fileID: -5145560240314623059, guid: 0a24ce912623d134fa1a47a49c8a5190, type: 3}
+  _gridLayoutGroup: {fileID: 325960605}
   _inventory:
   - {fileID: 11400000, guid: cc7e56ebfd7fccf498f707978186280e, type: 2}
   - {fileID: 11400000, guid: 3b7064aeda54d1f49b83a5af64e7427e, type: 2}
@@ -749,7 +750,6 @@ GameObject:
   - component: {fileID: 270830528}
   - component: {fileID: 270830527}
   - component: {fileID: 270830526}
-  - component: {fileID: 270830529}
   m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
@@ -864,18 +864,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270830524}
   m_CullTransparentMesh: 1
---- !u!114 &270830529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270830524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec759101f5786b4b89aae8a1b47ca4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &286432855
 GameObject:
   m_ObjectHideFlags: 0

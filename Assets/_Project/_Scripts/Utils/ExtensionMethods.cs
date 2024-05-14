@@ -1,34 +1,48 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public static class ExtensionMethods
 {
 
-    public static void SnapToTarget(this ScrollRect self, RectTransform target)
+    public static bool IsEmpty<T>(this T[] self)
     {
-        self.content.localPosition -= self.SnapLocalPosition(target);
+        return self == null || self.Length <= 0;
     }
 
-    public static Vector3 SnapLocalPosition(this ScrollRect self, RectTransform target)
+    public static bool IsEmpty<T>(this IList<T> self)
+    {
+        return self == null || self.Count <= 0;
+    }
+
+    public static void SnapToTarget(this ScrollRect self, RectTransform target, Vector2 margin)
+    {
+        self.content.localPosition -= self.SnapLocalPosition(target, margin);
+    }
+
+    public static Vector3 SnapLocalPosition(this ScrollRect self, RectTransform target, Vector2 margin)
     {
         Canvas.ForceUpdateCanvases();
 
         Vector2 viewPosMin = self.viewport.rect.min;
         Vector2 viewPosMax = self.viewport.rect.max;
 
-        Vector2 childPosMin = self.viewport.InverseTransformPoint(target.TransformPoint(target.rect.min));
-        Vector2 childPosMax = self.viewport.InverseTransformPoint(target.TransformPoint(target.rect.max));
+        Vector2 targetPosMin = self.viewport.InverseTransformPoint(target.TransformPoint(target.rect.min));
+        Vector2 targetPosMax = self.viewport.InverseTransformPoint(target.TransformPoint(target.rect.max));
+
+        targetPosMin -= margin;
+        targetPosMax += margin;
 
         Vector2 move = Vector2.zero;
 
-        if (childPosMax.y > viewPosMax.y)
-            move.y = childPosMax.y - viewPosMax.y;
-        if (childPosMin.x < viewPosMin.x)
-            move.x = childPosMin.x - viewPosMin.x;
-        if (childPosMax.x > viewPosMax.x)
-            move.x = childPosMax.x - viewPosMax.x;
-        if (childPosMin.y < viewPosMin.y)
-            move.y = childPosMin.y - viewPosMin.y;
+        if (targetPosMax.y > viewPosMax.y)
+            move.y = targetPosMax.y - viewPosMax.y;
+        if (targetPosMin.x < viewPosMin.x)
+            move.x = targetPosMin.x - viewPosMin.x;
+        if (targetPosMax.x > viewPosMax.x)
+            move.x = targetPosMax.x - viewPosMax.x;
+        if (targetPosMin.y < viewPosMin.y)
+            move.y = targetPosMin.y - viewPosMin.y;
 
         Vector3 worldMove = self.viewport.TransformDirection(move);
 
