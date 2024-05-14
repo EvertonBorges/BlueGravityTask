@@ -12,6 +12,8 @@ public class Manager_Inventory : MonoBehaviour
     public static Action ShowHideInventoryAction => m_showHideInventoryAction;
     private static Action<SO_BodyPart[]> m_startInventoryAction = (_) => { };
     public static Action<SO_BodyPart[]> StartInventoryAction => m_startInventoryAction;
+    private static Action<Slot_Inventory_Item> m_selectionAction = (_) => { };
+    public static Action<Slot_Inventory_Item> SelectionAction => m_selectionAction;
 
     public static bool m_show = false;
     public static bool Show => m_show;
@@ -19,6 +21,7 @@ public class Manager_Inventory : MonoBehaviour
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private Image _imgBackground;
     [SerializeField] private GameObject _ctnInventory;
+    [SerializeField] private ScrollRect _scroll;
     [SerializeField] private Transform _slotParent;
     [SerializeField] private Slot_Inventory_Item _slotPrefab;
 
@@ -83,18 +86,32 @@ public class Manager_Inventory : MonoBehaviour
             slot.Equiped(m_startInventory.Contains(item));
             m_usedSlots.Add(slot);
         }
+
+        if (m_usedSlots.Count > 0)
+            m_usedSlots[0].Select(true);
+    }
+
+    private void Selection(Slot_Inventory_Item slot)
+    {
+        foreach (var item in m_usedSlots)
+            item.Select(false);
+
+        slot.Select(true);
+        _scroll.SnapToTarget(slot.RectTransform);
     }
 
     void OnEnable()
     {
         m_showHideInventoryAction += ShowHideInventory;
         m_startInventoryAction += StartInventory;
+        m_selectionAction += Selection;
     }
 
     void OnDisable()
     {
         m_showHideInventoryAction -= ShowHideInventory;
         m_startInventoryAction -= StartInventory;
+        m_selectionAction -= Selection;
     }
 
 }
