@@ -7,17 +7,19 @@ public class Manager_UI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _txtCoin;
 
-    private static Action<int> m_onUpdateCoinsAction = (_) => { };
-    public static Action<int> OnUpdateCoinsAction => m_onUpdateCoinsAction;
+    private static Action m_onUpdateCoinsAction = () => { };
+    public static Action OnUpdateCoinsAction => m_onUpdateCoinsAction;
 
     void Awake()
     {
-        OnUpdateCoins(0);
+        OnUpdateCoins();
     }
 
-    private void OnUpdateCoins(int value)
+    private void OnUpdateCoins()
     {
-        _txtCoin.SetText($"{value}");
+        var coins = System_Inventory.Coins;
+
+        _txtCoin.SetText($"{coins}");
     }
 
     void OnEnable()

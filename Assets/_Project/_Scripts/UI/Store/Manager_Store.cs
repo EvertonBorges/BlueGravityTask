@@ -1,30 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
 
-public class Manager_Inventory : MonoBehaviour
+public class Manager_Store : MonoBehaviour
 {
 
-    private static Action m_showHideInventoryAction = () => { };
-    public static Action ShowHideInventoryAction => m_showHideInventoryAction;
-    private static Action<Slot_Inventory_Item> m_selectionAction = (_) => { };
-    public static Action<Slot_Inventory_Item> SelectionAction => m_selectionAction;
+    private static Action m_showHideAction = () => { };
+    public static Action ShowHideAction => m_showHideAction;
+    private static Action<Slot_Store_Item> m_selectionAction = (_) => { };
+    public static Action<Slot_Store_Item> SelectionAction => m_selectionAction;
     private static Action m_setupAction = () => { };
     public static Action SetupAction => m_setupAction;
 
-    [SerializeField] private Camera _playerCamera;
-    [SerializeField] private Image _imgBackground;
-    [SerializeField] private GameObject _ctnInventory;
+    [SerializeField] private List<SO_BodyPart> _itemsToSell;
+    
     [SerializeField] private ScrollRect _scroll;
+    [SerializeField] private GameObject _ctnStore;
     [SerializeField] private Transform _slotParent;
-    [SerializeField] private Slot_Inventory_Item _slotPrefab;
-    [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+    [SerializeField] private Slot_Store_Item _slotPrefab;
+    [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
 
-    private ObjectPool<Slot_Inventory_Item> m_slots;
-    private readonly List<Slot_Inventory_Item> m_usedSlots = new();
+    private ObjectPool<Slot_Store_Item> m_slots;
+    private readonly List<Slot_Store_Item> m_usedSlots = new();
     private int m_currentSlotIndex = -1;
 
     public static bool m_show = false;
@@ -32,8 +31,6 @@ public class Manager_Inventory : MonoBehaviour
 
     void Awake()
     {
-        _playerCamera.backgroundColor = _imgBackground.color;
-
         m_slots = new(
             () => Instantiate(_slotPrefab, _slotParent),
             slot =>
@@ -48,10 +45,10 @@ public class Manager_Inventory : MonoBehaviour
             10000
         );
 
-        _ctnInventory.SetActive(false);
+        _ctnStore.SetActive(false);
     }
 
-    private void ShowHideInventory()
+    private void ShowHideStore()
     {
         m_show = !m_show;
 
@@ -62,7 +59,7 @@ public class Manager_Inventory : MonoBehaviour
             Setup(true);
         }
 
-        _ctnInventory.SetActive(m_show);
+        _ctnStore.SetActive(m_show);
     }
 
     private void Setup(bool changeSelection)
@@ -72,13 +69,10 @@ public class Manager_Inventory : MonoBehaviour
 
         m_usedSlots.Clear();
 
-        var bodyParts = PlayerController.Instance.BodyParts;
-
-        foreach (var item in System_Inventory.Inventory)
+        foreach (var item in _itemsToSell)
         {
             var slot = m_slots.Get();
             slot.Setup(item);
-            slot.Equiped(bodyParts.Contains(item));
             m_usedSlots.Add(slot);
         }
 
@@ -93,7 +87,7 @@ public class Manager_Inventory : MonoBehaviour
         Setup(false);
     }
 
-    private void Selection(Slot_Inventory_Item slot)
+    private void Selection(Slot_Store_Item slot)
     {
         var index = m_usedSlots.IndexOf(slot);
 
@@ -106,20 +100,20 @@ public class Manager_Inventory : MonoBehaviour
         slot.Select(true);
         m_currentSlotIndex = index;
 
-        Vector2 margin = new(0f, _gridLayoutGroup.padding.vertical / 2f);
+        Vector2 margin = new(0f, _verticalLayoutGroup.padding.vertical / 2f);
         _scroll.SnapToTarget(slot.RectTransform, margin);
     }
 
     void OnEnable()
     {
-        m_showHideInventoryAction += ShowHideInventory;
+        m_showHideAction += ShowHideStore;
         m_selectionAction += Selection;
         m_setupAction += Setup;
     }
 
     void OnDisable()
     {
-        m_showHideInventoryAction -= ShowHideInventory;
+        m_showHideAction -= ShowHideStore;
         m_selectionAction -= Selection;
         m_setupAction -= Setup;
     }

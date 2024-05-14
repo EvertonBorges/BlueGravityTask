@@ -4,26 +4,16 @@ using UnityEngine;
 public class Manager_Game : MonoBehaviour
 {
 
-    private static Action<int> m_onAddCoinAction = (_) => { };
-    public static Action<int> OnAddCoinAction => m_onAddCoinAction;
+    [SerializeField] private int _startCoins = 10000;
 
-    private int m_coins = 0;
-
-    private void OnAddCoin(int value)
+    void Awake()
     {
-        m_coins += value;
-        
-        Manager_UI.OnUpdateCoinsAction(m_coins);
+        System_Inventory.StartCoin(_startCoins);
     }
 
-    void OnEnable()
+    void Start()
     {
-        m_onAddCoinAction += OnAddCoin;
-    }
-
-    void OnDisable()
-    {
-        m_onAddCoinAction -= OnAddCoin;
+        Manager_UI.OnUpdateCoinsAction();
     }
 
 }

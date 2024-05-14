@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _interactableSizeMultiplier = 1.05f;
 
     private bool m_facingLeft = false;
-    private bool Interacting => Manager_Inventory.Show;
+    private bool Interacting => Manager_Inventory.Show || Manager_Store.Show;
     private Vector3 m_startScale = default;
 
     private Vector3 m_move = default;

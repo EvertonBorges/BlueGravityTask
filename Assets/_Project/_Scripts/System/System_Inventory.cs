@@ -7,6 +7,10 @@ public static class System_Inventory
     public static IList<SO_BodyPart> Inventory => m_inventory.AsReadOnly();
 
     private static bool m_inventoryStarted = false;
+    private static bool m_coinsStarted = false;
+
+    private static int m_coins = 0;
+    public static int Coins => m_coins;
 
     public static void Clear()
     {
@@ -22,6 +26,23 @@ public static class System_Inventory
             AddItem(soBodyPart);
 
         m_inventoryStarted = true;
+    }
+
+    public static void StartCoin(int value)
+    {
+        if (m_coinsStarted)
+            return;
+
+        m_coins = value;
+
+        m_coinsStarted = true;
+    }
+
+    public static void AddCoin(int value)
+    {
+        m_coins += value;
+
+        Manager_UI.OnUpdateCoinsAction();
     }
 
     public static void AddItem(SO_BodyPart soBodyPart)

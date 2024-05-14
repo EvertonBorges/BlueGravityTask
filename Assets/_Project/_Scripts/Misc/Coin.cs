@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
         if (!other.TryGetComponent(out PlayerController _))
             return;
 
-        Manager_Game.OnAddCoinAction(value);
+        System_Inventory.AddCoin(value);
 
         if (value < 50)
             Manager_Sound.OnGetCoinAction();

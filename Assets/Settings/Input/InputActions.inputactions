@@ -168,17 +168,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6de1ac7a-6599-4968-a139-bb248314a110",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gameplay",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "71c3c852-9699-4240-8eb8-862b1fb876aa",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
