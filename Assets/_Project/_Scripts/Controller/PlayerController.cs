@@ -82,22 +82,15 @@ public class PlayerController : MonoBehaviour
     private void CheckFaceSide(bool left)
     {
         var scale = transform.localScale;
-        var scaleCanvas = Vector3.one;
 
         if (m_facingLeft && !left)
-        {
             scale.x = m_startScale.x;
-            scaleCanvas.x = 1f;
-        }
         else if (!m_facingLeft && left)
-        {
             scale.x = -m_startScale.x;
-            scaleCanvas.x = -1f;
-        }
 
         m_facingLeft = left;
         transform.localScale = scale;
-        _canvasInteraction.transform.localScale = scaleCanvas;
+        _canvasInteraction.transform.localScale = scale * 4f;
     }
 
 }
