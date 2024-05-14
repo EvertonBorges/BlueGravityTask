@@ -429,9 +429,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3601998123912721842}
   - component: {fileID: 1647032611353429530}
+  - component: {fileID: -5145560240314623059}
   - component: {fileID: 5975993031320756085}
   m_Layer: 5
-  m_Name: CTN_BodyPart
+  m_Name: Slot_Inventory_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,6 +469,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8019533118304538409}
   m_CullTransparentMesh: 1
+--- !u!114 &-5145560240314623059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019533118304538409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169a5e326473a8641a4b8d8fa5258d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _imgLeft: {fileID: 1757932728651861894}
+  _imgRight: {fileID: 6188528652649575142}
+  _txtTitle: {fileID: 6228509883991448551}
+  _ctnEquiped: {fileID: 7892199392721387540}
 --- !u!114 &5975993031320756085
 MonoBehaviour:
   m_ObjectHideFlags: 0

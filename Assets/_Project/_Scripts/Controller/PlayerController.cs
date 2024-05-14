@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CapsuleCollider2D _collider;
     [SerializeField] private LayerMask _layerInteractable;
     [SerializeField] private Canvas _canvasInteraction;
+    [SerializeField] private BodyPartController _bodyPartController;
 
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _interactableSizeMultiplier = 1.05f;
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour
         m_startScale = transform.localScale;
 
         _canvasInteraction.gameObject.SetActive(false);
+    }
+
+    void Start()
+    {
+        Manager_Inventory.StartInventoryAction(_bodyPartController.SoBodyParts);
     }
 
     void Update()
@@ -72,6 +78,8 @@ public class PlayerController : MonoBehaviour
 
     private void Inventory()
     {
+        _animator.SetSpeed(0f);
+
         Manager_Inventory.ShowHideInventoryAction();
     }
 

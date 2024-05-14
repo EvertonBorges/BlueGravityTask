@@ -1795,6 +1795,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _canvasInteraction: {fileID: 7016144096059576146}
+  _bodyPartController: {fileID: 5946037305483160517}
   _speed: 4
   _interactableSizeMultiplier: 1.05
 --- !u!114 &8854138133845044329

@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BodyPartController : MonoBehaviour
@@ -10,6 +13,7 @@ public class BodyPartController : MonoBehaviour
 
     [SerializeField] private SO_BodyPart[] _bodyPartsTest;
     [SerializeField] private BodyPart[] _bodyPart;
+    public SO_BodyPart[] SoBodyParts => _bodyPart.Select(x => x.SoBodyPart).Distinct().ToArray();
 
     private readonly Dictionary<BodyPartEnum, List<BodyPart>> m_bodyParts = new();
 

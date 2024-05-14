@@ -4,6 +4,7 @@ using UnityEngine;
 public class SO_BodyPart : ScriptableObject
 {
     public BodyPartEnum bodyPartEnum;
+    public string title;
     public Sprite sprite;
     public Sprite leftSprite;
     public Sprite rightSprite;
