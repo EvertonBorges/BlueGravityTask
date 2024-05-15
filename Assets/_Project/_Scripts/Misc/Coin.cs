@@ -12,9 +12,9 @@ public class Coin : MonoBehaviour
 
         System_Inventory.AddCoin(value);
 
-        if (value < 50)
+        if (value <= 50)
             Manager_Sound.OnGetCoinAction();
-        else if (value < 100)
+        else if (value <= 200)
             Manager_Sound.OnGetDiamondAction();
 
         Destroy(gameObject);
