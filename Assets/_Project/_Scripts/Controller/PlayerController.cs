@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     private void Interact()
     {
-        if (Manager_Inventory.Show)
+        if (Manager_Inventory.Show || Manager_Warning.Show)
             return;
 
         var point = transform.position;

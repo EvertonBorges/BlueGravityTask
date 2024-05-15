@@ -113,6 +113,8 @@ public class Slot_Store_Item : MonoBehaviour
         {
             System_Inventory.AddItem(m_soBodyPart);
             System_Inventory.AddCoin(-m_soBodyPart.price);
+
+            Manager_Store.SetupAction();
         }
         else
         {
@@ -128,17 +130,21 @@ public class Slot_Store_Item : MonoBehaviour
 
                     PlayerController.OnChangeBodyPartAction(randomSoBodyType.bodyPartEnum, randomSoBodyType);
                 }
+
+                Manager_Store.SetupAction();
             }
             else
             {
+                string text;
+
                 if (!_canSellEquipedAsset && m_equiped)
-                    Debug.Log($"Unable to sell an equipped item: {m_soBodyPart.name}");
+                    text = $"Unable to sell an equipped item: {m_soBodyPart.title}";
                 else
-                    Debug.Log($"There are no items in the same group: {m_soBodyPart.bodyPartEnum}");
+                    text = $"There are no items in the same group: {m_soBodyPart.bodyPartEnum}";
+                
+                Manager_Warning.OnShowAction(_button, text);
             }
         }
-
-        Manager_Store.SetupAction();
     }
 
 }
