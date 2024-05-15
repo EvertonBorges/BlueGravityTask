@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.UI;
@@ -7,8 +8,11 @@ using UnityEngine.UI;
 public class Manager_Store : MonoBehaviour
 {
 
-    private static Action m_showHideAction = () => { };
-    public static Action ShowHideAction => m_showHideAction;
+    private static Action<StoreType> m_showAction = (_) => { };
+    public static Action<StoreType> ShowAction => m_showAction;
+    private static Action m_hideAction = () => { };
+    public static Action HideAction => m_hideAction;
+
     private static Action<Slot_Store_Item> m_selectionAction = (_) => { };
     public static Action<Slot_Store_Item> SelectionAction => m_selectionAction;
     private static Action m_setupAction = () => { };
@@ -21,6 +25,7 @@ public class Manager_Store : MonoBehaviour
     [SerializeField] private Transform _slotParent;
     [SerializeField] private Slot_Store_Item _slotPrefab;
     [SerializeField] private VerticalLayoutGroup _verticalLayoutGroup;
+    [SerializeField] private TextMeshProUGUI _txtTitle;
 
     private ObjectPool<Slot_Store_Item> m_slots;
     private readonly List<Slot_Store_Item> m_usedSlots = new();
@@ -48,9 +53,9 @@ public class Manager_Store : MonoBehaviour
         _ctnStore.SetActive(false);
     }
 
-    private void ShowHideStore()
+    private void ShowStore(StoreType storeType)
     {
-        m_show = !m_show;
+        m_show = true;
 
         if (m_show)
         {
@@ -58,6 +63,15 @@ public class Manager_Store : MonoBehaviour
 
             Setup(true);
         }
+
+        _txtTitle.SetText($"STORE - {storeType}");
+
+        _ctnStore.SetActive(m_show);
+    }
+
+    private void HideStore()
+    {
+        m_show = false;
 
         _ctnStore.SetActive(m_show);
     }
@@ -106,14 +120,16 @@ public class Manager_Store : MonoBehaviour
 
     void OnEnable()
     {
-        m_showHideAction += ShowHideStore;
+        m_showAction += ShowStore;
+        m_hideAction += HideStore;
         m_selectionAction += Selection;
         m_setupAction += Setup;
     }
 
     void OnDisable()
     {
-        m_showHideAction -= ShowHideStore;
+        m_showAction -= ShowStore;
+        m_hideAction -= HideStore;
         m_selectionAction -= Selection;
         m_setupAction -= Setup;
     }
