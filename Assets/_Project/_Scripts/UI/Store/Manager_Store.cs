@@ -31,6 +31,8 @@ public class Manager_Store : MonoBehaviour
     private readonly List<Slot_Store_Item> m_usedSlots = new();
     private int m_currentSlotIndex = -1;
 
+    private StoreType m_currentType = StoreType.BUY;
+
     public static bool m_show = false;
     public static bool Show => m_show;
 
@@ -56,6 +58,7 @@ public class Manager_Store : MonoBehaviour
     private void ShowStore(StoreType storeType)
     {
         m_show = true;
+        m_currentType = storeType;
 
         if (m_show)
         {
@@ -64,7 +67,7 @@ public class Manager_Store : MonoBehaviour
             Setup(true);
         }
 
-        _txtTitle.SetText($"STORE - {storeType}");
+        _txtTitle.SetText($"STORE - {m_currentType}");
 
         _ctnStore.SetActive(m_show);
     }
@@ -83,15 +86,20 @@ public class Manager_Store : MonoBehaviour
 
         m_usedSlots.Clear();
 
-        foreach (var item in _itemsToSell)
+        var list = m_currentType == StoreType.BUY ? _itemsToSell : System_Inventory.Inventory;
+
+        foreach (var item in list)
         {
             var slot = m_slots.Get();
-            slot.Setup(item);
+            slot.Setup(item, m_currentType);
             m_usedSlots.Add(slot);
         }
 
         if (m_currentSlotIndex < 0 || (changeSelection && !m_usedSlots.IsEmpty()))
             m_currentSlotIndex = 0;
+
+        if (m_currentSlotIndex >= m_usedSlots.Count)
+            m_currentSlotIndex = m_usedSlots.Count - 1;
 
         m_usedSlots[m_currentSlotIndex].Select(true);
     }

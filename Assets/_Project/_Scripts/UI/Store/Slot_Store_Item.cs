@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class Slot_Store_Item : MonoBehaviour
 
     private bool m_selected = false;
     private SO_BodyPart m_soBodyPart = null;
+    private StoreType m_storeType = StoreType.BUY;
 
     void Awake()
     {
@@ -31,26 +33,32 @@ public class Slot_Store_Item : MonoBehaviour
         _button.onClick.AddListener(BTN_Callback);
     }
 
-    public void Setup(SO_BodyPart soBodyPart)
+    public void Setup(SO_BodyPart soBodyPart, StoreType storeType)
     {
         m_soBodyPart = soBodyPart;
+        m_storeType = storeType;
 
         _txtTitle.SetText(soBodyPart.title);
-        _txtPrice.SetText(soBodyPart.price.ToString());
+        _txtPrice.SetText((soBodyPart.price / (storeType == StoreType.BUY ? 1 : 2)).ToString());
         _imgLeft.sprite = soBodyPart.leftSprite;
 
         _imgRight.color = soBodyPart.rightSprite == null ? Color.clear : Color.white;
         _imgRight.sprite = soBodyPart.rightSprite;
 
-        _txtBuy.SetText("BUY");
+        var text = storeType.ToString();
 
-        if (System_Inventory.Inventory.Contains(soBodyPart))
+        _txtBuy.SetText($"{text}");
+
+        if (storeType == StoreType.BUY)
         {
-            _imgBuyBackground.color = _purchasedColor;
-            _txtBuy.SetText("<i><s>BUY</s></i>");
+            if (System_Inventory.Inventory.Contains(soBodyPart))
+            {
+                _imgBuyBackground.color = _purchasedColor;
+                _txtBuy.SetText($"<i><s>{text}</s></i>");
+            }
+            else
+                _imgBuyBackground.color = System_Inventory.Coins >= m_soBodyPart.price ? _canBuyColor : _cantBuyColor;
         }
-        else
-            _imgBuyBackground.color = System_Inventory.Coins >= m_soBodyPart.price ? _canBuyColor : _cantBuyColor;
 
         Select(false);
     }
@@ -72,8 +80,16 @@ public class Slot_Store_Item : MonoBehaviour
 
     public void BTN_Callback()
     {
-        System_Inventory.AddItem(m_soBodyPart);
-        System_Inventory.AddCoin(-m_soBodyPart.price);
+        if (m_storeType == StoreType.BUY)
+        {
+            System_Inventory.AddItem(m_soBodyPart);
+            System_Inventory.AddCoin(-m_soBodyPart.price);
+        }
+        else
+        {
+            System_Inventory.RemoveItem(m_soBodyPart);
+            System_Inventory.AddCoin(m_soBodyPart.price / 2);
+        }
 
         Manager_Store.SetupAction();
     }
