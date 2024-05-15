@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private static Action<BodyPartEnum, SO_BodyPart> m_onChangeBodyPartAction = (_, __) => { };
     public static Action<BodyPartEnum, SO_BodyPart> OnChangeBodyPartAction => m_onChangeBodyPartAction;
 
+    [Header("References")]
     [SerializeField] private PlayerAnimatorController _animator;
     [SerializeField] private CapsuleCollider2D _collider;
     [SerializeField] private LayerMask _layerInteractable;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BodyPartController _bodyPartController;
     public SO_BodyPart[] BodyParts => _bodyPartController.SoBodyParts;
 
+    [Header("Parameters")]
     [SerializeField] private float _speed = 3f;
     [SerializeField] private float _interactableSizeMultiplier = 1.05f;
 

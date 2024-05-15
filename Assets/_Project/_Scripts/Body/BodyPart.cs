@@ -3,6 +3,7 @@ using UnityEngine;
 public class BodyPart : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private SO_BodyPart _soBodyPart;
     public SO_BodyPart SoBodyPart => _soBodyPart;
     [SerializeField] private BodyPartEnum _bodyPart;

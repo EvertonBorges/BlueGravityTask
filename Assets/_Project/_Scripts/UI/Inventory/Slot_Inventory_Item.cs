@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Slot_Inventory_Item : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private RectTransform _rectTransform;
     public RectTransform RectTransform => _rectTransform;
     [SerializeField] private Button _button;

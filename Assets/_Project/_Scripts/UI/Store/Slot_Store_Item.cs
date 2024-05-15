@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Slot_Store_Item : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private RectTransform _rectTransform;
     public RectTransform RectTransform => _rectTransform;
     [SerializeField] private Button _button;
@@ -16,8 +17,11 @@ public class Slot_Store_Item : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _txtTitle;
     [SerializeField] private TextMeshProUGUI _txtPrice;
     [SerializeField] private TextMeshProUGUI _txtBuy;
+
+    [Header("Parameters")]
     [SerializeField] private bool _canSellEquipedAsset = false;
 
+    [Header("Colors")]
     [SerializeField] private Color _purchasedColor;
     [SerializeField] private Color _sellEquipedColor;
     [SerializeField] private Color _canBuyColor;

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
 
+    [Header("Parameters")]
     [SerializeField] private int value;
 
     void OnTriggerEnter2D(Collider2D other)

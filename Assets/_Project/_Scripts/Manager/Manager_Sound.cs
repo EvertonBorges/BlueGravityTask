@@ -4,6 +4,7 @@ using UnityEngine;
 public class Manager_Sound : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private AudioSource _coinAudio;
     [SerializeField] private AudioSource _diamondAudio;
     [SerializeField] private AudioSource _changeBodyPartAudio;

@@ -15,6 +15,7 @@ public class Manager_Inventory : MonoBehaviour
     private static Action m_setupAction = () => { };
     public static Action SetupAction => m_setupAction;
 
+    [Header("References")]
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private Image _imgBackground;
     [SerializeField] private GameObject _ctnInventory;

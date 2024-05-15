@@ -18,8 +18,10 @@ public class Manager_Store : MonoBehaviour
     private static Action m_setupAction = () => { };
     public static Action SetupAction => m_setupAction;
 
+    [Header("Items")]
     [SerializeField] private List<SO_BodyPart> _itemsToSell;
     
+    [Header("References")]
     [SerializeField] private ScrollRect _scroll;
     [SerializeField] private GameObject _ctnStore;
     [SerializeField] private Transform _slotParent;

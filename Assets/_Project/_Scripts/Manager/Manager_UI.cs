@@ -5,6 +5,7 @@ using UnityEngine;
 public class Manager_UI : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private TextMeshProUGUI _txtCoin;
 
     private static Action m_onUpdateCoinsAction = () => { };

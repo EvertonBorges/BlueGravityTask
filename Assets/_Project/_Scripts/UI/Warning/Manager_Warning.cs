@@ -13,6 +13,7 @@ public class Manager_Warning : MonoBehaviour
     private static bool m_show = false;
     public static bool Show => m_show;
 
+    [Header("References")]
     [SerializeField] private GameObject _container;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Button _button;

@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Manager_Game : MonoBehaviour
 {
 
+    [Header("Parameters")]
     [SerializeField] private int _startCoins = 10000;
 
     void Awake()

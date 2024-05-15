@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimatorController : MonoBehaviour
@@ -7,6 +5,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private enum State { IDLE, WALK }
 
+    [Header("References")]
     [SerializeField] private Animator _animator;
 
     private float m_speed = 0f;

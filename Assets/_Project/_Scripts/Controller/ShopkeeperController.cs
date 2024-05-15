@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class ShopkeeperController : MonoBehaviour
 {
 
+    [Header("References")]
     [SerializeField] private GameObject _canvasStore;
     [SerializeField] private Button _btnBuy;
 

@@ -9,6 +9,7 @@ public class BodyPartController : MonoBehaviour
     private Action<BodyPartEnum, SO_BodyPart> m_changeBodyPartAction = (_, __) => { };
     public Action<BodyPartEnum, SO_BodyPart> ChangeBodyPart => m_changeBodyPartAction;
 
+    [Header("References")]
     [SerializeField] private SO_BodyPart[] _bodyPartsTest;
     [SerializeField] private BodyPart[] _bodyPart;
     public SO_BodyPart[] SoBodyParts => _bodyPart.Select(x => x.SoBodyPart).Distinct().ToArray();
