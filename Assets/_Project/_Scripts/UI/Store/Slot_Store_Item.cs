@@ -57,6 +57,7 @@ public class Slot_Store_Item : MonoBehaviour
         {
             if (System_Inventory.Inventory.Contains(soBodyPart))
             {
+                m_canBuyOrSell = false;
                 _imgBuyBackground.color = _purchasedColor;
                 _txtBuy.SetText($"<i><s>{text}</s></i>");
             }
@@ -111,10 +112,19 @@ public class Slot_Store_Item : MonoBehaviour
     {
         if (m_storeType == StoreType.BUY)
         {
-            System_Inventory.AddItem(m_soBodyPart);
-            System_Inventory.AddCoin(-m_soBodyPart.price);
+            if (m_canBuyOrSell)
+            {
+                System_Inventory.AddItem(m_soBodyPart);
+                System_Inventory.AddCoin(-m_soBodyPart.price);
 
-            Manager_Store.SetupAction();
+                Manager_Store.SetupAction();
+            }
+            else
+            {
+                string text = $"You already have the item: {m_soBodyPart.title}";
+                
+                Manager_Warning.OnShowAction(_button, text);
+            }
         }
         else
         {

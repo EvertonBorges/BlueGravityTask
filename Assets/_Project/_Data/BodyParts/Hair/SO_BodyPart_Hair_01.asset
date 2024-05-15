@@ -15,6 +15,6 @@ MonoBehaviour:
   bodyPartEnum: 4
   title: Hair 01
   sprite: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
-  leftSprite: {fileID: 0}
+  leftSprite: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
   rightSprite: {fileID: 0}
-  price: 0
+  price: 500
