@@ -130,6 +130,8 @@ public class PlayerController : MonoBehaviour
     private void OnChangeBodyPart(BodyPartEnum bodyPartEnum, SO_BodyPart soBodyPart)
     {
         _bodyPartController.ChangeBodyPart(bodyPartEnum, soBodyPart);
+
+        Manager_Sound.OnChangeBodyParteAction();
     }
 
     void OnEnable()
