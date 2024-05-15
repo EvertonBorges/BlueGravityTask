@@ -74,6 +74,9 @@ public class PlayerController : MonoBehaviour
 
     private void Interact()
     {
+        if (Manager_Inventory.Show)
+            return;
+
         var point = transform.position;
         var size = _collider.size * _interactableSizeMultiplier * m_startScale.magnitude;
         var direction = _collider.direction;
@@ -87,6 +90,9 @@ public class PlayerController : MonoBehaviour
 
     private void Inventory()
     {
+        if (ShopkeeperController.Show || Manager_Store.Show)
+            return;
+
         _animator.SetSpeed(0f);
 
         Manager_Inventory.ShowHideInventoryAction();

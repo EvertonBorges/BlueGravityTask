@@ -75,7 +75,9 @@ MonoBehaviour:
   _txtTitle: {fileID: 1711101642923359388}
   _txtPrice: {fileID: 7409034695714648983}
   _txtBuy: {fileID: 378102125218074839}
+  _canSellEquipedAsset: 1
   _purchasedColor: {r: 0.62352943, g: 0.42745098, b: 0.28627452, a: 1}
+  _sellEquipedColor: {r: 0.36718956, g: 0.29411766, b: 0.6313726, a: 1}
   _canBuyColor: {r: 0.29411766, g: 0.6313726, b: 0.41960785, a: 1}
   _cantBuyColor: {r: 0.7921569, g: 0.2784314, b: 0.15686275, a: 1}
 --- !u!114 &8025203829551156444
