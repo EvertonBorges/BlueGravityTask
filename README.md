@@ -4,7 +4,7 @@ Functional clothes shop
 
 [Read here the document](Document/Document.pdf).
 
-[Download the Executable here](/Executable/BlueGravityTask.zip).
+[Download the Executable here](Executable).
 
 Everton Borges - [LinkedIn](https://www.linkedin.com/in/everton-soares-borges/)
 
